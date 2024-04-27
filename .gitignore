@@ -1,0 +1,5 @@
+app/env.prod
+app/database/*.sqlite
+app/uploads/documents/*
+app/uploads/images/*
+meili/*

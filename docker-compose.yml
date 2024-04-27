@@ -1,0 +1,18 @@
+services:
+  app:
+    image: note-test-1:latest
+    volumes:
+      - ${PWD}/app/database:/app/database
+      - ${PWD}/app/uploads:/app/uploads
+    env_file:
+      - ${PWD}/app/env.prod
+    ports:
+      - "8000:8080"
+  meilisearch:
+    image: getmeili/meilisearch:v1.7
+    ports:
+      - "7700:7700"
+    environment:
+      MEILI_MASTER_KEY: my-master-key
+    volumes:
+      - ${PWD}/meili:/meili_data
